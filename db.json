@@ -24,12 +24,9 @@
       "imgSrc": "./public/16.jpg",
       "isAdopted": false,
       "details": {
-        "id": 16,
-        "name": "American Staffordshire Terrier",
         "life_span": "12 - 15 years",
         "bred_for": "",
         "breed_group": "Terrier",
-        "temperament": "Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous",
         "weight": { "imperial": "50 - 60 lbs", "metric": "23 - 27 kgs" },
         "height": {
           "imperial": "17 - 19 inches at the withers",
@@ -44,12 +41,9 @@
       "imgSrc": "./public/81.jpg",
       "isAdopted": false,
       "details": {
-        "id": 81,
-        "name": "Chow Chow",
         "life_span": "12 - 15 years",
         "bred_for": "Guardian, cart pulling, hunting",
         "breed_group": "Non-Sporting",
-        "temperament": "Aloof, Loyal, Independent, Quiet",
         "weight": { "imperial": "40 - 70 lbs", "metric": "18 - 32 kgs" },
         "height": {
           "imperial": "17 - 20 inches at the withers",
@@ -64,12 +58,9 @@
       "imgSrc": "./public/121.jpg",
       "isAdopted": false,
       "details": {
-        "id": 121,
-        "name": "Golden Retriever",
         "life_span": "10 - 12 years",
         "bred_for": "Retrieving",
         "breed_group": "Sporting",
-        "temperament": "Intelligent, Kind, Reliable, Friendly, Trustworthy, Confident",
         "weight": { "imperial": "55 - 75 lbs", "metric": "25 - 34 kgs" },
         "height": {
           "imperial": "21.5 - 24 inches at the withers",
