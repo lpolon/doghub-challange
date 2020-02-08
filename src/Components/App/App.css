@@ -12,13 +12,24 @@ input:focus {
   outline: none;
 }
 
+.hover-zoom--colorize {
+  transition: transform 0.1s, filter 0.3s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.hover-zoom--colorize:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
 /* Reusable class style for image container: */
 .image-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: #000;
+  /* TODO: Escolher background em funcao do fundo */
+  /* background: #000; */
 }
 
 .image-container img {
@@ -27,4 +38,7 @@ input:focus {
 
 .App {
   font-family: 'Work Sans', sans-serif;
+  background-color: rgb(240, 240, 240);
+  height: 100vh;
+  /* display: block; */
 }

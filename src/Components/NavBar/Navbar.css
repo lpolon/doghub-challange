@@ -1,0 +1,31 @@
+.navbar {
+  margin: 0.1em 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+}
+
+.navbar-brand {
+  /* color: white; */
+  font-size: 1.8em;
+  text-align: center;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-brand strong {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  background-color: transparent !important;
+}
+
+.navbar-item {
+  background-color: rgb(225, 225, 225);
+}
