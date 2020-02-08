@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import 'bulma/css/bulma.css';
 import './App.css';
 
@@ -12,6 +12,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('props do app', this.props);
     return (
       <div className="App">
         <NavBar />

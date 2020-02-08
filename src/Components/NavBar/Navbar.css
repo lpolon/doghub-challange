@@ -21,7 +21,8 @@
   font-weight: 600;
 }
 
-a {
+a,
+div {
   color: inherit;
   background-color: transparent !important;
 }

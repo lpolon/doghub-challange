@@ -2,14 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import adoptionIcon from './bowl.png';
-import backArrow from './back.png';
+import { useLocation } from 'react-router-dom';
+import BackButton from '../BackButton/BackButton';
 
 export default function NavBar(props) {
   return (
     <nav className="navbar is-fixed-top is-transparent">
-      <Link className="navbar-item left hover-zoom--colorize">
-        <img src={backArrow} alt="" />
-      </Link>
+      {'/' === useLocation().pathname ? (
+        <div style={{ width: 31.5 }}></div>
+      ) : (
+        <BackButton />
+      )}
       <Link className="navbar-brand hover-zoom--colorize" to="/">
         Dog<strong>Hub</strong>
       </Link>
