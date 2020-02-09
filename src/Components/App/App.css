@@ -2,7 +2,7 @@ html {
   font-size: 15px;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 560px) {
   html {
     font-size: 18px;
   }
@@ -12,14 +12,24 @@ input:focus {
   outline: none;
 }
 
-.hover-zoom--colorize {
+.hover-zoom--colorize-full {
   transition: transform 0.1s, filter 0.3s ease-in-out;
   filter: grayscale(100%);
 }
 
-.hover-zoom--colorize:hover {
+.hover-zoom--colorize-full:hover {
   filter: grayscale(0);
   transform: scale(1.1);
+}
+
+.hover-zoom--colorize-half {
+  transition: transform 0.1s, filter 0.3s ease-in-out;
+  filter: grayscale(50%);
+}
+
+.hover-zoom--colorize-half:hover {
+  filter: grayscale(0);
+  transform: scale(1.05);
 }
 
 /* Reusable class style for image container: */

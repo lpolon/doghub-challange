@@ -8,13 +8,14 @@ export default function LargeCard(props) {
   const {
     breed: { id, name, imgSrc, temperament: temperaments },
   } = props;
-  // TODO: 
+  // TODO:
   // onClick, função do app para pegar um elemento,
   // link to Id
   return (
     <Link
-    // to={``}
-    className="LargeCard drop-shadow">
+      // to={``}
+      className="LargeCard drop-shadow hover-zoom--colorize-half"
+    >
       <div className="image-container">
         <img src={imgSrc} alt={name} />
         <div className="text-container">

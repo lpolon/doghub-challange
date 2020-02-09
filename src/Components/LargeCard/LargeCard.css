@@ -31,7 +31,13 @@
   margin-bottom: .6rem;
 }
 
-@media only screen and (max-width: 480px) {
+.hover-zoom--colorize-half {
+  transition: transform 0.1s, filter 0.3s ease-in-out;
+  filter: grayscale(50%);
+}
+
+
+@media only screen and (max-width: 560px) {
   .LargeCard .image-container {
     width: 80vw;
   }

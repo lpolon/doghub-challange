@@ -7,7 +7,7 @@ export default function BackButton() {
   return (
     <div
       onClick={useHistory().goBack}
-      className="navbar-item left hover-zoom--colorize"
+      className="navbar-item left hover-zoom--colorize-half"
     >
       <img src={backArrow} alt="" />
     </div>
