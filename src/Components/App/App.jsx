@@ -5,6 +5,8 @@ import './App.css';
 import { dogApi } from '../../utils/dogApi';
 
 import NavBar from '../NavBar/Navbar';
+import CardList from '../CardList/CardList';
+import LargeCard from '../LargeCard/LargeCard';
 
 export default class App extends Component {
   constructor(props) {
@@ -23,10 +25,22 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <NavBar />
+        <Switch>
+          <Route
+            exact
+            to="/"
+            render={(props) => (
+              <CardList
+                component={LargeCard}
+                breeds={this.state.breeds}
+                {...props}
+              />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
