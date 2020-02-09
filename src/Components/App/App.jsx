@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import 'bulma/css/bulma.css';
 import './App.css';
-import { dogApi } from '../../utils/dogApi';
+import { breeds } from '../../utils/dogApi';
 
 import NavBar from '../NavBar/Navbar';
 import CardList from '../CardList/CardList';
 import LargeCard from '../LargeCard/LargeCard';
+import DetailsCard from '../DetailsCard/DetailsCard';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       breeds: [],
-      selectedBreed: {},
     };
   }
 
   async componentDidMount() {
-    const response = await dogApi.fetchAll();
+    const response = await breeds.fetchAll();
     this.setState({
       breeds: response,
     });
@@ -31,14 +31,21 @@ export default class App extends Component {
         <Switch>
           <Route
             exact
-            to="/"
+            path="/"
             render={() => (
               <CardList
                 component={LargeCard}
                 breeds={this.state.breeds}
                 header={'Para adoção:'}
+                updateSelectedBreed={this.updateSelectedBreed}
               />
             )}
+          />
+          <Route
+            path="/:id"
+            render={(props) => {
+              return <DetailsCard {...props} />;
+            }}
           />
         </Switch>
       </div>

@@ -17,7 +17,6 @@ export const breeds = {
     try {
       const response = await fetch(`${this.endpoint}`);
       const body = await response.json();
-      console.log(body);
       return body;
     } catch (error) {
       console.log(error);
@@ -25,14 +24,13 @@ export const breeds = {
   },
   async fetchOne(id) {
     const body = await fetchOneClosure(this.endpoint)(id);
-    console.log(body);
     return body;
   },
 };
 
 export const oneBreed = {
   endpoint: 'http://localhost:5000/breed',
-  async fetchOneDetails(id) {
+  async fetchDetails(id) {
     const body = await fetchOneClosure(this.endpoint)(id);
     const {
       weight: { metric: wMetric },
@@ -40,9 +38,6 @@ export const oneBreed = {
     } = body;
     body.weight = wMetric;
     body.height = hMetric;
-    console.log(body);
     return body;
   },
 };
-
-oneBreed.fetchOneDetails(6);

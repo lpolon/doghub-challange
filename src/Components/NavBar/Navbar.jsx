@@ -13,7 +13,7 @@ export default function NavBar(props) {
       ) : (
         <BackButton />
       )}
-      <Link className="navbar-brand hover-zoom--colorize-half" to="/">
+      <Link to="/" className="navbar-brand hover-zoom--colorize-half">
         Dog<strong>Hub</strong>
       </Link>
       <Link
