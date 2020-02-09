@@ -3,13 +3,7 @@ import './LargeCard.css';
 import { Link } from 'react-router-dom';
 import TagList from '../TagList/TagList';
 
-export default function LargeCard({
-  id,
-  name,
-  imgSrc,
-  temperaments,
-  isFromList,
-}) {
+export default function LargeCard({ name, imgSrc, temperaments }) {
   return (
     <div className="image-container">
       <img src={imgSrc} alt={name} />

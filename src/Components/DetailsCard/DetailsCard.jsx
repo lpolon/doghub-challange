@@ -35,12 +35,15 @@ export default class DetailsCard extends Component {
   render() {
     return (
       <div className="DetailsCard-container">
-        <LargeCard
-          id={this.state.id}
-          name={this.state.name}
-          imgSrc={this.state.imgSrc}
-          temperaments={this.state.temperaments}
-        />
+        <h1>Detalhes:</h1>
+        <div className="info-container drop-shadow--always-on-hover">
+          <LargeCard
+            id={this.state.id}
+            name={this.state.name}
+            imgSrc={this.state.imgSrc}
+            temperaments={this.state.temperaments}
+          />
+        </div>
       </div>
     );
   }
