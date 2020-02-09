@@ -1,6 +1,5 @@
 import React from 'react';
 import './LargeCard.css';
-import { Link } from 'react-router-dom';
 import TagList from '../TagList/TagList';
 
 export default function LargeCard({ name, imgSrc, temperaments }) {

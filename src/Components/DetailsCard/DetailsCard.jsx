@@ -3,6 +3,7 @@ import './DetailsCard.css';
 import { oneBreed } from '../../utils/dogApi';
 
 import LargeCard from '../LargeCard/LargeCard';
+import DetailsTable from '../DetailsTable/DetailsTable';
 
 export default class DetailsCard extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class DetailsCard extends Component {
       name: '',
       imgSrc: '',
       temperaments: '',
+      details: {},
     };
   }
 
@@ -23,12 +25,19 @@ export default class DetailsCard extends Component {
   async componentDidMount() {
     const { id: idFromParams } = this.props.match.params;
     const response = await this.fetchDetails(idFromParams);
-    const { id, name, imgSrc, temperament: temperaments } = response;
+    const {
+      id,
+      name,
+      imgSrc,
+      temperament: temperaments,
+      ...details
+    } = response;
     this.setState({
       id,
       name,
       imgSrc,
       temperaments,
+      details,
     });
   }
 
@@ -43,6 +52,22 @@ export default class DetailsCard extends Component {
             imgSrc={this.state.imgSrc}
             temperaments={this.state.temperaments}
           />
+          {/* quando apertar, atualizar, checar e trocar is-primary por is-outlined
+          mudar o texto para adotado =D */}
+          <div className="table-and-button-container">
+            <DetailsTable details={this.state.details} />
+            <button
+              className="
+            button
+            is-large
+            is-fullwidth
+            is-rounded
+            is-success
+            "
+            >
+              Adotar
+            </button>
+          </div>
         </div>
       </div>
     );

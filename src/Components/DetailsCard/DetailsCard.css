@@ -1,6 +1,14 @@
 .DetailsCard-container {
-  margin: 3.8rem auto;
+  margin: 3.8rem auto 1rem;
   width: 80vw;
+}
+
+.info-container {
+  background-color: white;
+}
+
+.table-and-button-container {
+  padding: 0rem 1rem 1rem;
 }
 
 @media only screen and (min-width: 560px) {
