@@ -2,13 +2,23 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0 2%;
+  margin: 0 auto;
 }
 
 .CardList-container h1 {
-  margin: 4rem 2% 1rem;
+  margin: 3.5rem 2% 1rem;
   text-align: center;
   font-size: 2.5em;
   font-weight: 300;
   color: rgb(89, 89, 89);
+}
+
+.LargeCardList {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto 1.3rem;
+  background-color: white;
+  max-width: 450px;
 }

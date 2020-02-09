@@ -38,7 +38,7 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: white;
+  background: transparent;
 }
 
 .image-container img {

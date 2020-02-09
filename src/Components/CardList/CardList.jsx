@@ -1,5 +1,6 @@
 import React from 'react';
 import './CardList.css';
+import { Link } from 'react-router-dom';
 
 export default function CardList({
   header,
@@ -14,7 +15,14 @@ export default function CardList({
         {breeds.map((breed) => {
           const { id, name, imgSrc, temperament: temperaments } = breed;
           const cardProps = { id, name, imgSrc, temperaments };
-          return <CardComponent key={breed.id} {...cardProps} {...rest} />;
+          return (
+            <Link
+              to={`/${id}`}
+              className="LargeCardList drop-shadow hover-zoom--colorize-half"
+            >
+              <CardComponent key={breed.id} {...cardProps} {...rest} />
+            </Link>
+          );
         })}
       </div>
     </div>

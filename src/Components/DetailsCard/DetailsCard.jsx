@@ -17,7 +17,6 @@ export default class DetailsCard extends Component {
 
   fetchDetails = async (idFromParams) => {
     const body = await oneBreed.fetchDetails(idFromParams);
-    console.log('dados do details!', body);
     return body;
   };
 
@@ -35,12 +34,14 @@ export default class DetailsCard extends Component {
 
   render() {
     return (
-      <LargeCard
-        id={this.state.id}
-        name={this.state.name}
-        imgSrc={this.state.imgSrc}
-        temperaments={this.state.temperaments}
-      />
+      <div className="DetailsCard-container">
+        <LargeCard
+          id={this.state.id}
+          name={this.state.name}
+          imgSrc={this.state.imgSrc}
+          temperaments={this.state.temperaments}
+        />
+      </div>
     );
   }
 }
