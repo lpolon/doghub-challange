@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './DetailsCard.css';
-import { oneBreed } from '../../utils/dogApi';
+import { oneBreed, breeds } from '../../utils/dogApi';
 
 import LargeCard from '../LargeCard/LargeCard';
 import DetailsTable from '../DetailsTable/DetailsTable';
@@ -14,6 +14,7 @@ export default class DetailsCard extends Component {
       imgSrc: '',
       temperaments: '',
       details: {},
+      isAdopted: false,
     };
   }
 
@@ -23,7 +24,9 @@ export default class DetailsCard extends Component {
   };
 
   async componentDidMount() {
+    await this.props.updateBreedsList();
     const { id: idFromParams } = this.props.match.params;
+    const isAdopted = this.props.getAdoptionStatus(idFromParams);
     const response = await this.fetchDetails(idFromParams);
     const {
       id,
@@ -32,12 +35,23 @@ export default class DetailsCard extends Component {
       temperament: temperaments,
       ...details
     } = response;
+
     this.setState({
       id,
       name,
       imgSrc,
       temperaments,
       details,
+      isAdopted,
+    });
+  }
+
+  async handleClick(id) {
+    await breeds.updateOne(id, { isAdopted: true });
+    await this.props.updateBreedsList();
+    const isAdopted = this.props.getAdoptionStatus(id);
+    this.setState({
+      isAdopted,
     });
   }
 
@@ -57,15 +71,13 @@ export default class DetailsCard extends Component {
           <div className="table-and-button-container">
             <DetailsTable details={this.state.details} />
             <button
-              className="
-            button
-            is-large
-            is-fullwidth
-            is-rounded
-            is-success
-            "
+              className={`button is-large is-fullwidth
+              ${
+                this.state.isAdopted ? 'is-outlined' : `is-rounded is-success`
+              }`}
+              onClick={() => this.handleClick(this.state.id)}
             >
-              Adotar
+              {this.state.isAdopted ? `Adotado =D` : `Adotar`}
             </button>
           </div>
         </div>
@@ -73,16 +85,3 @@ export default class DetailsCard extends Component {
     );
   }
 }
-/*
-
-  handleClick:
-  - shadows como props de style??
-  - PUT DB /breed com o estado true
-  /breeds/:id
-
-  - atualizar o botão falando que foi adicionado.
-
-    - criar os stylings que ainda faltam
-  botão bulma.
-  usar uma table para os details
-  */

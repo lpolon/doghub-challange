@@ -15,13 +15,26 @@ export default class App extends Component {
     this.state = {
       breeds: [],
     };
+    this.updateBreedsList = this.updateBreedsList.bind(this);
+    this.getAdoptionStatus = this.getAdoptionStatus.bind(this);
   }
 
-  async componentDidMount() {
+  getAdoptionStatus(id) {
+    const foundDog = this.state.breeds.find(
+      (dog) => Number(dog.id) === Number(id)
+    );
+    return foundDog.isAdopted;
+  }
+
+  async updateBreedsList() {
     const response = await breeds.fetchAll();
     this.setState({
       breeds: response,
     });
+  }
+
+  componentDidMount() {
+    this.updateBreedsList();
   }
 
   render() {
@@ -35,7 +48,7 @@ export default class App extends Component {
             render={() => (
               <CardList
                 component={LargeCard}
-                breeds={this.state.breeds}
+                breedsArr={this.state.breeds}
                 header={'Para adoção:'}
                 updateSelectedBreed={this.updateSelectedBreed}
               />
@@ -44,7 +57,14 @@ export default class App extends Component {
           <Route
             path="/:id"
             render={(props) => {
-              return <DetailsCard {...props} />;
+              return (
+                <DetailsCard
+                  getAdoptionStatus={this.getAdoptionStatus}
+                  updateBreedsList={this.updateBreedsList}
+                  breedsArr={this.state.breeds}
+                  {...props}
+                />
+              );
             }}
           />
         </Switch>

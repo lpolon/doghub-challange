@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function CardList({
   header,
-  breeds,
+  breedsArr,
   component: CardComponent,
   ...rest
 }) {
@@ -12,15 +12,16 @@ export default function CardList({
     <div className="CardList-container">
       <h1>{header}</h1>
       <div className="CardList">
-        {breeds.map((breed) => {
+        {breedsArr.map((breed, i) => {
           const { id, name, imgSrc, temperament: temperaments } = breed;
           const cardProps = { id, name, imgSrc, temperaments };
           return (
             <Link
               to={`/${id}`}
+              key={breed.id}
               className="LargeCardList drop-shadow hover-zoom--colorize-half"
             >
-              <CardComponent key={breed.id} {...cardProps} {...rest} />
+              <CardComponent {...cardProps} {...rest} />
             </Link>
           );
         })}

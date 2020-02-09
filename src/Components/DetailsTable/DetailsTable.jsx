@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function DetailsTable({ details }) {
-  console.log('recebido:', details);
+
   return (
     <div className="table-container">
       <table className="table is-narrow is-hoverable is-fullwidth">
