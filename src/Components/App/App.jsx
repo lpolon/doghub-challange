@@ -32,11 +32,11 @@ export default class App extends Component {
           <Route
             exact
             to="/"
-            render={(props) => (
+            render={() => (
               <CardList
                 component={LargeCard}
                 breeds={this.state.breeds}
-                {...props}
+                header={'Para adoção:'}
               />
             )}
           />

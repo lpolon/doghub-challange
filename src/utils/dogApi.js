@@ -5,7 +5,6 @@ export const dogApi = {
     try {
       const response = await fetch(this.endpoint);
       const body = await response.json();
-      console.log(body);
       return body;
     } catch (error) {
       console.log(error);

@@ -21,8 +21,8 @@
   font-weight: 600;
 }
 
-a,
-div {
+.navbar a,
+.navbar span {
   color: inherit;
   background-color: transparent !important;
 }

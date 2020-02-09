@@ -1,0 +1,38 @@
+.LargeCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0.2rem 1.3rem;
+  background-color: white;
+}
+
+.LargeCard .image-container {
+  width: 35vw;
+  margin-bottom: 1rem;
+  border-radius: 5%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.LargeCard .text-container {
+  margin-bottom: 0.1rem;
+  padding: .4rem 0.4rem .5rem;
+  background-color: white;
+}
+
+.LargeCard h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgb(89, 89, 89);
+  margin-bottom: .6rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .LargeCard .image-container {
+    width: 80vw;
+  }
+}

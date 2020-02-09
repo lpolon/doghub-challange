@@ -9,7 +9,7 @@ export default function NavBar(props) {
   return (
     <nav className="navbar is-fixed-top is-transparent">
       {'/' === useLocation().pathname ? (
-        <div style={{ width: 31.5 }}></div>
+        <span style={{ width: 50 }}></span>
       ) : (
         <BackButton />
       )}

@@ -2,5 +2,13 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 4.4rem 10%;
+  margin: 0 2%;
+}
+
+.CardList-container h1 {
+  margin: 4rem 2% 1rem;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 300;
+  color: rgb(89, 89, 89);
 }

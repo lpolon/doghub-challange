@@ -1,10 +1,10 @@
 html {
-  font-size: 18px;
+  font-size: 15px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 480px) {
   html {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -28,8 +28,7 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  /* TODO: Escolher background em funcao do fundo */
-  /* background: #000; */
+  background: white;
 }
 
 .image-container img {
@@ -39,6 +38,15 @@ input:focus {
 .App {
   font-family: 'Work Sans', sans-serif;
   background-color: rgb(240, 240, 240);
-  height: 100vh;
-  /* display: block; */
+}
+
+.drop-shadow {
+  border-radius: 5%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: transparent;
+}
+
+.drop-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
