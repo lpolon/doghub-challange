@@ -26,6 +26,22 @@ export const breeds = {
     const body = await fetchOneClosure(this.endpoint)(id);
     return body;
   },
+
+  async updateOne(id, data) {
+    try {
+      const response = await fetch(`${this.endpoint}/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(data),
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 export const oneBreed = {
