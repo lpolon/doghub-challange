@@ -12,7 +12,9 @@ export default function CardList({
       <h1>{header}</h1>
       <div className="CardList">
         {breeds.map((breed) => {
-          return <CardComponent key={breed.id} breed={breed} {...rest} />;
+          const { id, name, imgSrc, temperament: temperaments } = breed;
+          const cardProps = { id, name, imgSrc, temperaments };
+          return <CardComponent key={breed.id} {...cardProps} {...rest} />;
         })}
       </div>
     </div>

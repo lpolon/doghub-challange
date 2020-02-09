@@ -3,11 +3,7 @@ import './LargeCard.css';
 import { Link } from 'react-router-dom';
 import TagList from '../TagList/TagList';
 
-export default function LargeCard(props) {
-  const {
-    breed: { id, name, imgSrc, temperament: temperaments },
-  } = props;
-
+export default function LargeCard({ id, name, imgSrc, temperaments }) {
   return (
     <Link
       to={`/${id}`}

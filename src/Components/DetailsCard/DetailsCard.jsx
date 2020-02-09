@@ -1,30 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './DetailsCard.css';
 import { oneBreed } from '../../utils/dogApi';
 
-export default function DetailsCard({ match }) {
-  const { id } = match.params;
-  console.log(id);
+import LargeCard from '../LargeCard/LargeCard';
 
-  const fetchDetails = async (id) => {
-    const body = await oneBreed.fetchDetails(id);
-    console.log('foi?', body);
+export default class DetailsCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: null,
+      name: '',
+      imgSrc: '',
+      temperaments: '',
+    };
+  }
+
+  fetchDetails = async (idFromParams) => {
+    const body = await oneBreed.fetchDetails(idFromParams);
+    console.log('dados do details!', body);
     return body;
   };
 
-  return <h1>oi</h1>
+  async componentDidMount() {
+    const { id: idFromParams } = this.props.match.params;
+    const response = await this.fetchDetails(idFromParams);
+    const { id, name, imgSrc, temperament: temperaments } = response;
+    this.setState({
+      id,
+      name,
+      imgSrc,
+      temperaments,
+    });
+  }
+
+  render() {
+    return (
+      <LargeCard
+        id={this.state.id}
+        name={this.state.name}
+        imgSrc={this.state.imgSrc}
+        temperaments={this.state.temperaments}
+      />
+    );
+  }
 }
-  /*
+/*
 
   handleClick:
+  - shadows como props de style??
   - PUT DB /breed com o estado true
   /breeds/:id
-  - pegar o id por params match e pegar infos
-  - NÃO DEVE PRECISAR SALVAR SELECTEDBREED NO STATE
-  - A FUNÇÃO HANDLECLICK PASSA A SER DO DETAILS.
-  checar status e atualizar ou não.
+
   - atualizar o botão falando que foi adicionado.
-  -atualizar 
 
     - criar os stylings que ainda faltam
   botão bulma.
