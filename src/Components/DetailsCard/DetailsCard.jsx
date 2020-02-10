@@ -66,8 +66,6 @@ export default class DetailsCard extends Component {
             imgSrc={this.state.imgSrc}
             temperaments={this.state.temperaments}
           />
-          {/* quando apertar, atualizar, checar e trocar is-primary por is-outlined
-          mudar o texto para adotado =D */}
           <div className="table-and-button-container">
             <DetailsTable details={this.state.details} />
             <button

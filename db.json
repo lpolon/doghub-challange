@@ -26,7 +26,7 @@
       "name": "Golden Retriever",
       "temperament": "Intelligent, Kind, Reliable, Friendly, Trustworthy, Confident",
       "imgSrc": "/121.jpg",
-      "isAdopted": true
+      "isAdopted": false
     }
   ],
   "breed": [

@@ -9,7 +9,7 @@
   margin: 3.5rem 2% 1rem;
 }
 
-.LargeCardList {
+.card-container {
   width: 80vw;
   display: flex;
   flex-direction: column;

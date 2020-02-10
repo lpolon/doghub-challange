@@ -3,11 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 import 'bulma/css/bulma.css';
 import './App.css';
 import { breeds } from '../../utils/dogApi';
+import {
+  populateLargeCard,
+  populateSmallCard,
+} from '../../utils/populateLists';
 
 import NavBar from '../NavBar/Navbar';
 import CardList from '../CardList/CardList';
 import LargeCard from '../LargeCard/LargeCard';
 import DetailsCard from '../DetailsCard/DetailsCard';
+import AdoptedCard from '../AdoptedCard/AdoptedCard';
 
 export default class App extends Component {
   constructor(props) {
@@ -38,6 +43,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('to recebendo array?', this.state.breeds);
     return (
       <div className="App">
         <NavBar />
@@ -47,10 +53,22 @@ export default class App extends Component {
             path="/"
             render={() => (
               <CardList
+                populateFunction={populateLargeCard}
                 component={LargeCard}
                 breedsArr={this.state.breeds}
                 header={'Para adoção:'}
-                updateSelectedBreed={this.updateSelectedBreed}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/my-adoptions"
+            render={() => (
+              <CardList
+                populateFunction={populateSmallCard}
+                component={AdoptedCard}
+                breedsArr={this.state.breeds}
+                header={'Sua Lista de adoção:'}
               />
             )}
           />
