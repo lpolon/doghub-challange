@@ -22,7 +22,7 @@ export const populateSmallCard = (React, Link, array, CardComponent, rest) => {
       const { id, name, imgSrc } = breed;
       const cardProps = { id, name, imgSrc };
       return (
-        <div className="card-container drop-shadow hover-zoom--colorize-half">
+        <div className="small-card-container drop-shadow--always-on-hover">
           <CardComponent {...cardProps} {...rest} />
         </div>
       );

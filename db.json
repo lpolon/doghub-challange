@@ -19,7 +19,7 @@
       "name": "Chow Chow",
       "temperament": "Aloof, Loyal, Independent, Quiet",
       "imgSrc": "/81.jpg",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": 121,

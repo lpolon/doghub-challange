@@ -1,0 +1,15 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: .4rem;
+}
+
+.flex-container .image-container {
+  width: 20%;
+}
+
+.flex-container h2 {
+  margin-left: 1.3rem;
+  font-size: 1.2rem;
+}
