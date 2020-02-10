@@ -5,21 +5,21 @@
       "name": "Akita",
       "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
       "imgSrc": "/6.jpg",
-      "isAdopted": true
+      "isAdopted": false
     },
     {
       "id": 16,
       "name": "American Staffordshire Terrier",
       "temperament": "Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous",
       "imgSrc": "/16.jpg",
-      "isAdopted": true
+      "isAdopted": false
     },
     {
       "id": 81,
       "name": "Chow Chow",
       "temperament": "Aloof, Loyal, Independent, Quiet",
       "imgSrc": "/81.jpg",
-      "isAdopted": true
+      "isAdopted": false
     },
     {
       "id": 121,

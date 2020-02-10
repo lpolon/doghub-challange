@@ -69,6 +69,7 @@ export default class App extends Component {
                 component={AdoptedCard}
                 breedsArr={this.state.breeds}
                 header={'Sua Lista de adoção:'}
+                updateBreedsList={this.updateBreedsList}
               />
             )}
           />
