@@ -5,7 +5,7 @@
       "name": "Akita",
       "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
       "imgSrc": "/6.jpg",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": 16,

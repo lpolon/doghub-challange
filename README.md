@@ -1,4 +1,5 @@
 # Doghub
+project done as a tecnical challenge of a selective process
 
 ## How to start the project
 to start json-server fake api:
